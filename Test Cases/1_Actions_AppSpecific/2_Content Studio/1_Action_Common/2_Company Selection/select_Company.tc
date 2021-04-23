@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>select_Company</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b3792344-f1ca-4926-a651-90363867b150</testCaseGuid>
+   <variable>
+      <defaultValue>'Test2020 New\r\n'</defaultValue>
+      <description></description>
+      <id>0f01ef4b-c32a-4084-bb92-1690d2f2cd7b</id>
+      <masked>false</masked>
+      <name>CompanyName</name>
+   </variable>
+</TestCaseEntity>

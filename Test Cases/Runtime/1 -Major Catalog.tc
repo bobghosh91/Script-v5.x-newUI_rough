@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>1 -Major Catalog</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8ddeb376-ed8e-485e-a407-aa30ff214af4</testCaseGuid>
+   <variable>
+      <defaultValue>'true'</defaultValue>
+      <description></description>
+      <id>7da04358-21a1-4143-aff7-2e87c75c1248</id>
+      <masked>false</masked>
+      <name>useBrowserSessionOfThisTestForNextTest</name>
+   </variable>
+</TestCaseEntity>

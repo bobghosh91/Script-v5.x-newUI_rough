@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To click the edit button of a single catalog after applying necessary filters</description>
+   <name>Click_Edit_Single_Catalog</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f3dc272e-def5-46a6-a1d2-52f421e1547e</testCaseGuid>
+</TestCaseEntity>

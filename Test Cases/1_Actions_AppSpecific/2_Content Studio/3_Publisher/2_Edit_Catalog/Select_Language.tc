@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Language</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>30e91455-4501-419e-9d74-436c92fd38e8</testCaseGuid>
+   <variable>
+      <defaultValue>'English (United States)'</defaultValue>
+      <description></description>
+      <id>21b1b8f6-dd88-4c93-beca-ecb21affc1a5</id>
+      <masked>false</masked>
+      <name>Language</name>
+   </variable>
+</TestCaseEntity>

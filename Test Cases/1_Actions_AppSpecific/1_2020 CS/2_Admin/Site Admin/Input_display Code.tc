@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_display Code</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8f0c0ba6-46c7-4240-ba14-928a1c8f1d59</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e8c04ebe-5cbf-4c36-9fac-32389a31eed4</id>
+      <masked>false</masked>
+      <name>displayCode</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Market</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>556f4db7-c118-4958-b9ab-72848bd788f8</testCaseGuid>
+   <variable>
+      <defaultValue>'2020CiC - TT'</defaultValue>
+      <description></description>
+      <id>d957461c-4d4c-4792-9641-f88a13fa2799</id>
+      <masked>false</masked>
+      <name>Market</name>
+   </variable>
+</TestCaseEntity>

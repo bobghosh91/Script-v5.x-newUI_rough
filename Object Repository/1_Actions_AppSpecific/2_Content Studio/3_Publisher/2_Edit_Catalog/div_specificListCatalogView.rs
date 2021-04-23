@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_specificListCatalogView</name>
+   <tag></tag>
+   <elementGuidId>259f7e9b-8915-4a47-bf3e-2b9dbfb62713</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[@id='catalogs-list-view']//*[@id='language-list-select']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[@id='catalogs-list-view']//*[@id='language-list-select']</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/1_Actions_AppSpecific/2_Content Studio/3_Publisher/iframe_main-iframe</value>
+   </webElementProperties>
+</WebElementEntity>

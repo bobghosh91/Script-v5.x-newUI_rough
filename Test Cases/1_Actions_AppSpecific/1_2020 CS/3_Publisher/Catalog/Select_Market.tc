@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Market</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e3b00441-3691-44ce-a99b-228430394a95</testCaseGuid>
+   <variable>
+      <defaultValue>'United States'</defaultValue>
+      <description></description>
+      <id>e7cb190d-c497-45c6-9355-38d52e00044e</id>
+      <masked>false</masked>
+      <name>Market</name>
+   </variable>
+</TestCaseEntity>

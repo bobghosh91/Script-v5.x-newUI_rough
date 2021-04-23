@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_State</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7eddbf86-fc5d-47de-afdd-3fc8c72433d9</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ff299613-be5f-44b3-9f42-0e7fa385adda</id>
+      <masked>false</masked>
+      <name>State</name>
+   </variable>
+</TestCaseEntity>

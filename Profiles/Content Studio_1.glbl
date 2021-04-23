@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>Content Studio_1</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>false</initValue>
+      <name>login</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>''</initValue>
+      <name>URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>[('') : '']</initValue>
+      <name>envInfo</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>''</initValue>
+      <name>currentTestCaseID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>''</initValue>
+      <name>nextTestCaseIdInTsSuiteFile</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>''</initValue>
+      <name>currentTestCaseSkippedStatus</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>[:]</initValue>
+      <name>currentTestCaseNonSupportedEnvironments</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>''</initValue>
+      <name>currentTestCaseCaptureNetworkTraffic</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>''</initValue>
+      <name>currentTestCaseImgCheckSuccess</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>For internal use, not to be specified</description>
+      <initValue>'false'</initValue>
+      <name>anyWebDriverSessionOpen</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Minimum wait time, to be specified in seconds</description>
+      <initValue>5</initValue>
+      <name>minWait</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Medium wait time, to be specified in seconds</description>
+      <initValue>20</initValue>
+      <name>midWait</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Maximum wait time, to be specified in seconds</description>
+      <initValue>30</initValue>
+      <name>maxWait</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Maximum number of attempts to verify an element's visibility or clickilibity </description>
+      <initValue>3</initValue>
+      <name>waitAttempts</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Minute delay time, to be specified in seconds, usually to be used with fixed delays</description>
+      <initValue>2</initValue>
+      <name>minuteDelay</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Specify One of These: canary, dev, dev-aws, qa, uat, staging-aws, prod-aws, prod-azure. Optionally, pre-prod can be specified but URL should be read from spread sheet</description>
+      <initValue>'qat'</initValue>
+      <name>platformEnv</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Specify &quot;true&quot; if url is to be obtained from platform launcher; &quot;false&quot; if to be obtained from local XLS</description>
+      <initValue>'true'</initValue>
+      <name>useUrlFromPlatformLauncherOverUrlFromSpreadsheet</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Sheet name(s) from the test input file for Current App</description>
+      <initValue>['Content Studio_DataSet1']</initValue>
+      <name>testDataSheetName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Specify a percentage value between 0-100.  Value closer to 100 means images match closely.</description>
+      <initValue>95</initValue>
+      <name>imageComparisonMinTolerance</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Specify a percentage value between 0-100.  Value closer to 100 means images match closely.</description>
+      <initValue>70</initValue>
+      <name>imageComparisonMidTolerance</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Specify a percentage value between 0-100.  Value closer to 100 means images match closely.</description>
+      <initValue>60</initValue>
+      <name>imageComparisonMaxTolerance</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Scaling factor used to increase/reduce the size of ui components</description>
+      <initValue>1</initValue>
+      <name>scalingFactorWin10</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified; When set to true, will disable the info-bar at the top of chrome launched via automation</description>
+      <initValue>false</initValue>
+      <name>chromeDisableInfobars</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, true means the chrome beta browser will be used, to be reverted back to false if execution is to be carried out for other browsers</description>
+      <initValue>'false'</initValue>
+      <name>chromeBetaToUsedOnWindowsExecution</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, This will be used only if parameter &quot;chromeBetaToBeUsed&quot; is set to true</description>
+      <initValue>'C:/Program Files (x86)/Google/Chrome Beta/Application/chrome.exe'</initValue>
+      <name>chromeBetaBinaryPathOnWindows</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Specify &quot;true&quot; for a flag that needs to be enabled</description>
+      <initValue>[('customerAppsEnabled') : 'false']</initValue>
+      <name>launcherFlagsToggle</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, Specify &quot;true&quot; if want to test each test case on new browser without maintaining browser session; &quot;false&quot; if  want to use browser session</description>
+      <initValue>'false'</initValue>
+      <name>enforceNewBrowserSessionForEachTestCase</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified; When TFS integration in On (setting external to Katalon), this will be the suite hierarchy created. Specify comma separated values without leading or trailing spaces; Supported flags: &lt;testSuite>,&lt;platformEnv>,&lt;os>,&lt;browser>,&lt;browserVersion>,&lt;profile>,&lt;initialTimeStamp></description>
+      <initValue>'&lt;testSuite>'</initValue>
+      <name>tfsSuiteHierarchy</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified; When TFS integration in On (setting external to Katalon), this will be the suite name created. Specify custom name or supported flag: &lt;defaultPattern></description>
+      <initValue>'&lt;defaultPattern>'</initValue>
+      <name>tfsSuiteName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified; When &quot;true&quot;, during automatic re-run of non-passed tests, it will update the execution results under already created suite in run 1; if &quot;false&quot;, always creates new TFS suite</description>
+      <initValue>true</initValue>
+      <name>tfsSuiteUpdateMode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, normally false, set it to true only when you need to auto-update the reference images</description>
+      <initValue>false</initValue>
+      <name>updateReferenceImages</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, This is sheet name needs to be referred in execution readiness tracker.</description>
+      <initValue>'Content Studio'</initValue>
+      <name>trackerDataSheetName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Can be specified, This has to be test suite file name without extension.</description>
+      <initValue>['Content Studio_1', 'Content Studio_2']</initValue>
+      <name>associatedSuiteNames</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>logoutFromOutlookWebApp</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b6852890-4ae9-4254-85e4-26cb7fc05e05</testCaseGuid>
+   <variable>
+      <defaultValue>'qaguiautomationtest3'</defaultValue>
+      <description></description>
+      <id>1f2dfbac-3b23-4645-9214-5690a5b786a8</id>
+      <masked>false</masked>
+      <name>userName</name>
+   </variable>
+</TestCaseEntity>

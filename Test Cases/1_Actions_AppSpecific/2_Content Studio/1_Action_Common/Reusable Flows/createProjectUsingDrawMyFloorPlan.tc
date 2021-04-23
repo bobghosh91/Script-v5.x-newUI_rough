@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>createProjectUsingDrawMyFloorPlan</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6fa71864-7e90-46fd-b484-9d470c514729</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>555f47ab-ffd7-487d-8737-8431cdc28bfd</id>
+      <masked>false</masked>
+      <name>projectName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bb1b7e1e-1076-476b-b4e3-7042e2adaed1</id>
+      <masked>false</masked>
+      <name>userName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6fe5b26e-76e6-45e5-917f-4bd9a6f3f43c</id>
+      <masked>false</masked>
+      <name>userPassword</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Introduced Hard Delay for Parallel Execution</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a86c9a7c-4cb5-4351-a508-58f857c1847a</testCaseGuid>
+</TestCaseEntity>

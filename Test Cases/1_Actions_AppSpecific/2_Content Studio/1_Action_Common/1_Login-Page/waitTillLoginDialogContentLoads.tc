@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>waitTillLoginDialogContentLoads</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b676e4f1-df38-4c39-8dc8-aacb20ef3781</testCaseGuid>
+   <variable>
+      <defaultValue>false</defaultValue>
+      <description></description>
+      <id>2c9f47e5-1e1c-4f12-9b2d-8af3d665082d</id>
+      <masked>false</masked>
+      <name>relaunchLoginDialogIfNotLoading</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestObject('1_Common/1_Login-Page/button_LoginTrigger')</defaultValue>
+      <description></description>
+      <id>c274426c-a0e2-4873-a47e-3a380469c8c7</id>
+      <masked>false</masked>
+      <name>loginTriggerObject</name>
+   </variable>
+</TestCaseEntity>

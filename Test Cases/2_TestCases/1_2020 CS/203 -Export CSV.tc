@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>203 -Export CSV</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6a4fae25-94a3-4181-9b56-fc2044912a47</testCaseGuid>
+   <variable>
+      <defaultValue>'false'</defaultValue>
+      <description></description>
+      <id>d4c2919a-756a-4083-b0b4-92ca20a05c3e</id>
+      <masked>false</masked>
+      <name>useBrowserSessionOfThisTestForNextTest</name>
+   </variable>
+</TestCaseEntity>

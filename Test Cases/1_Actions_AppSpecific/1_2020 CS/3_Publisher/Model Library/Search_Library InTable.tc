@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search_Library InTable</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bd4ab511-17e9-4602-bfc7-96d96835cff4</testCaseGuid>
+   <variable>
+      <defaultValue>'Test'</defaultValue>
+      <description></description>
+      <id>da0d3e66-a5b5-4b1d-9572-024b41421f3b</id>
+      <masked>false</masked>
+      <name>librarySearch</name>
+   </variable>
+</TestCaseEntity>

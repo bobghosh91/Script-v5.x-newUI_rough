@@ -1,0 +1,37 @@
+Option Explicit
+#If VBA7 Then
+Private Declare PtrSafe Function URLDownloadToFile Lib "urlmon" Alias "URLDownloadToFileA" ( _
+           ByVal pCaller As LongPtr, _
+            ByVal szURL As String, _
+            ByVal szFileName As String, _
+            ByVal dwReserved As LongPtr, _
+         ByVal lpfnCB As Long) As LongPtr
+
+Private Const ERROR_SUCCESS As Long = 0
+Private Const BINDF_GETNEWESTVERSION As Long = &H10
+Private Const INTERNET_FLAG_RELOAD As Long = &H80000000
+#End If
+
+
+Sub downloadSingleFile()
+
+Dim FileURL As String
+Dim Destination As String
+
+Debug.Print "Step 1"
+
+'Automation tracker link :
+FileURL = "https://2020spaces-my.sharepoint.com/:x:/p/admin_onedrive_02/EY8Wl20aS5dKtuOD171wIN4BhBvnzv87Drc-retosfOf0w?e=T9eLLc&download=1"
+
+Destination = "C:\Users\dhoosa\Desktop\test.xlsx"
+'Destination = "E:\TFS\QA Automations\IdealSpacesAutomation\IdealSpaces 6.0\Script v4.x\Data Files\Execution readiness tracker of all test cases.xlsx"
+
+Debug.Print "Step 2"
+
+' old--> URLDownloadToFile 0, FileURL, Destination, 0, 0
+
+URLDownloadToFile 0&, FileURL, Destination, BINDF_GETNEWESTVERSION, 0&
+
+Debug.Print "File downloaded"
+
+End Sub

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>clickOnTextInEmailBody</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>848b46bc-41f2-4868-92c6-74b82922ec20</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>550e61d0-c645-4785-8cfe-968ddc3e3eea</id>
+      <masked>false</masked>
+      <name>textToSearch</name>
+   </variable>
+</TestCaseEntity>

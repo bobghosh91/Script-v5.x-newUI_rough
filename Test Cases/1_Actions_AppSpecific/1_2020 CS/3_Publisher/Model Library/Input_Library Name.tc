@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_Library Name</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>687bbeea-2b6d-49ac-837a-578dc1c73072</testCaseGuid>
+   <variable>
+      <defaultValue>'Test'</defaultValue>
+      <description></description>
+      <id>79f771e5-4152-46cf-b4bc-f262ac705736</id>
+      <masked>false</masked>
+      <name>libraryName</name>
+   </variable>
+</TestCaseEntity>

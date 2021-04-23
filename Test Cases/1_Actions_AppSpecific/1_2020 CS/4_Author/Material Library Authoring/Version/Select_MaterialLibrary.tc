@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_MaterialLibrary</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3d77f27b-b0da-4e50-8bf9-6a2f7593032c</testCaseGuid>
+   <variable>
+      <defaultValue>'Test'</defaultValue>
+      <description></description>
+      <id>e59f666a-80b8-4ea5-8b73-3c452e4b011e</id>
+      <masked>false</masked>
+      <name>MatlibraryName</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>3 -Minor Catalog</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f770861e-e924-4356-8c64-7cb5d31a1179</testCaseGuid>
+   <variable>
+      <defaultValue>'true'</defaultValue>
+      <description></description>
+      <id>3c1588fc-0835-4dd4-9ce9-85eb2363c239</id>
+      <masked>false</masked>
+      <name>useBrowserSessionOfThisTestForNextTest</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>enter_Last-Name</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4fb5159a-157c-4f5a-a374-054c2b0cd908</testCaseGuid>
+   <variable>
+      <defaultValue>'TestName'</defaultValue>
+      <description></description>
+      <id>b041b1cd-5c93-483a-b387-de2be22e4d39</id>
+      <masked>false</masked>
+      <name>LName</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>205 -Export PAF</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a468912e-8642-48c4-b194-8088b4316a1a</testCaseGuid>
+   <variable>
+      <defaultValue>'false'</defaultValue>
+      <description></description>
+      <id>caac1900-3049-4c8f-87ec-325b57f760b0</id>
+      <masked>false</masked>
+      <name>useBrowserSessionOfThisTestForNextTest</name>
+   </variable>
+</TestCaseEntity>

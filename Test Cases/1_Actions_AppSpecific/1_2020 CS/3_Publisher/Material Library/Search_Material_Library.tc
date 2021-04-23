@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search_Material_Library</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>833f54f9-7f42-42c9-b7bd-5d3c2887edc5</testCaseGuid>
+   <variable>
+      <defaultValue>'Mat Test'</defaultValue>
+      <description></description>
+      <id>1a29a9b0-d643-4696-8316-25d025753d25</id>
+      <masked>false</masked>
+      <name>MatlibrarySearch</name>
+   </variable>
+</TestCaseEntity>

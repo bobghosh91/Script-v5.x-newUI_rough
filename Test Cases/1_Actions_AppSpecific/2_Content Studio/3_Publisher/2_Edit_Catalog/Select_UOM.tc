@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_UOM</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6b379efd-555f-4b29-b519-5f3f590374e9</testCaseGuid>
+   <variable>
+      <defaultValue>'Metric'</defaultValue>
+      <description></description>
+      <id>fa484976-3c09-4a10-8e69-0c6b2643d21d</id>
+      <masked>false</masked>
+      <name>UOM</name>
+   </variable>
+</TestCaseEntity>

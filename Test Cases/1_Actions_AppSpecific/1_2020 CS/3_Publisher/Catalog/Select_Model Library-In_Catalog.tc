@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Model Library-In_Catalog</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>87a89465-0c76-4c9a-9b3e-b4915f512cb5</testCaseGuid>
+   <variable>
+      <defaultValue>'Leisure'</defaultValue>
+      <description></description>
+      <id>8d3f7485-e205-4399-9d21-d8366bd5857b</id>
+      <masked>false</masked>
+      <name>libraryName</name>
+   </variable>
+</TestCaseEntity>

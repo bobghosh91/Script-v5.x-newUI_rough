@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_Catalog Code</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4ace5916-c05e-42cf-b8e0-11af55b0a7de</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>7793eb7b-4d59-491f-ba9c-9d5776c5c395</id>
+      <masked>false</masked>
+      <name>catalogCode</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_Address 1</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c07cd794-024d-49df-ae52-646a3b8689a7</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>487d7b9b-2772-4b9f-8097-dbfc10c1463b</id>
+      <masked>false</masked>
+      <name>Addressline1</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>generalFlagsForTestCase</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>35819088-0e5f-47ad-8a4b-2294833ec9e3</testCaseGuid>
+   <variable>
+      <defaultValue>'true'</defaultValue>
+      <description>String values (true or false); If true, execution result will not be pushed to TFS</description>
+      <id>3c8729c9-d083-46ed-8425-0d997e4b80c0</id>
+      <masked>false</masked>
+      <name>manualVerificationNeeded</name>
+   </variable>
+   <variable>
+      <defaultValue>'false'</defaultValue>
+      <description>String values (true or false); If true, browser traffic will be routed through BrowserMobProxy to capture the traffic </description>
+      <id>39fa24a8-dbfd-4e4d-890f-73522f6461a5</id>
+      <masked>false</masked>
+      <name>captureNetworkTraffic</name>
+   </variable>
+   <variable>
+      <defaultValue>[('Combination(s)') : 'windows;mac,chrome,pre-prod', ('Message(s)') : 'This test is not supported on win for reason A, and not on mac-chrome-pre-prod for reason B']</defaultValue>
+      <description>Combinations: comma separated list for 1 environment combination, semi-colon separator for multiple. For one combination, we support os,browser,platform-env and app.</description>
+      <id>76013ebe-07e2-4388-8fa7-1066b353edc7</id>
+      <masked>false</masked>
+      <name>nonSupportedEnvironments</name>
+   </variable>
+   <variable>
+      <defaultValue>'true'</defaultValue>
+      <description>String values (true or false); If true, browser session of current test will be continued for next one</description>
+      <id>db172807-e333-44f6-944c-86976b3c164a</id>
+      <masked>false</masked>
+      <name>useBrowserSessionOfThisTestForNextTest</name>
+   </variable>
+</TestCaseEntity>

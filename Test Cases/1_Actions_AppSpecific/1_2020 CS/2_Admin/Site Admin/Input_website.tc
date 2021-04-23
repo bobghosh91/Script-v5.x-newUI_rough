@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_website</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>eda14259-b41e-4482-9cbc-a3155c015c87</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>fa9b3d42-5ee4-478b-baeb-a71232843660</id>
+      <masked>false</masked>
+      <name>Website</name>
+   </variable>
+</TestCaseEntity>

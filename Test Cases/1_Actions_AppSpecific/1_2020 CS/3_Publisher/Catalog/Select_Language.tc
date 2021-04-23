@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Language</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>04e147fb-ad40-413c-aef5-767d9e8935a1</testCaseGuid>
+   <variable>
+      <defaultValue>'United States'</defaultValue>
+      <description></description>
+      <id>483f6412-caa6-4ace-8782-4e482437e02d</id>
+      <masked>false</masked>
+      <name>Market</name>
+   </variable>
+   <variable>
+      <defaultValue>'English - United States'</defaultValue>
+      <description></description>
+      <id>3af8e990-da37-48a4-af0d-33d1fc071457</id>
+      <masked>false</masked>
+      <name>Language</name>
+   </variable>
+</TestCaseEntity>

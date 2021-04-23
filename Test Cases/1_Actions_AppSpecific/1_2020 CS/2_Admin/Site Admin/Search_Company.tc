@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search_Company</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1c1f4955-8f6a-481f-a058-cafe6ad8413d</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>14f3d7ae-db95-42e5-a4be-ae1278d6e9a6</id>
+      <masked>false</masked>
+      <name>companySearch</name>
+   </variable>
+</TestCaseEntity>

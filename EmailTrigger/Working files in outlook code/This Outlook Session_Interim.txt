@@ -1,0 +1,263 @@
+Dim emailTriggerEnabled As String
+Dim projectPath As String
+Dim path_emailTriggerConfig_Excel As String
+Dim path_emailTriggerConfig_DownloadScript As String
+Dim machineName As String
+Dim projectRootPath As String
+Dim subject As String
+
+Public Sub runBatch(MyMail As MailItem)
+
+Dim msgInBody As String
+Dim msgBodyForQA As String
+Dim msgBodyForStaging As String
+Dim msgBodyForPreProd As String
+Dim msgBodyForProd As String
+Dim platformEnv As String
+Dim batchFileNameWithPath As String
+Dim configFilePath As String
+Dim dataToWriteAsString As String
+Dim reportFolderCleanUpBatchFile As String
+Dim reportMergingBatchFile As String
+
+subject = LCase(MyMail.subject)
+
+   If (InStr(1, subject, "re:") = 0 And InStr(1, subject, "fw:") = 0) Then
+   
+        If InStr(1, subject, "golive:qa") > 0 And InStr(1, subject, "golive:qat") = 0 Then
+            platformEnv = "qat"
+        ElseIf (InStr(1, subject, "golive:qat") > 0) Then
+            platformEnv = "qat"
+        ElseIf (InStr(1, subject, "golive:staging") > 0) Then
+            platformEnv = "staging-azure"
+        Else
+             Exit Sub
+        End If
+       
+path_emailTriggerConfig_Excel = "D:\QA Automations\Email macros\Parameterization\Email Trigger Config.xlsx"
+path_emailTriggerConfig_DownloadScript = "D:\QA Automations\Email macros\Parameterization\DownloadEmailTriggerConfig.bat"
+
+downloadEmailTriggerConfig (path_emailTriggerConfig_DownloadScript)
+
+Timeout 10
+
+machineName = hostName()
+
+emailTriggerEnabled = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "emailTriggerEnabled", machineName)
+
+If InStr(1, LCase(emailTriggerEnabled), "yes") > 0 Then
+
+    projectRootPath = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectRootPath", machineName) & "\" & fetchVerifiedBuildVersionFromTextFile(fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectVerifiedVersionFilePath", machineName))
+    batchFileNameWithPath = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "batchFileNameWithPath", machineName)
+   
+    reportFolderCleanUpBatchFile = projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "reportFolderCleanUpBatchFile", machineName)
+    reportMergingBatchFile = projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "reportMergingBatchFile", machineName)
+    configFilePath = projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "configFilePath", machineName)
+   
+    Debug.Print "projectRootPath = " & projectRootPath
+    Debug.Print "batchFileNameWithPath = " & batchFileNameWithPath
+    Debug.Print "configFilePath = " & configFilePath
+    Debug.Print "reportFolderCleanUpBatchFile = " & reportFolderCleanUpBatchFile
+    Debug.Print "reportMergingBatchFile = " & reportMergingBatchFile
+
+        '--------------- Send pre-execution notification email ---------------
+  Call Mail_small_Text_Outlook(platformEnv, path_emailTriggerConfig_Excel, machineName, subject)
+
+        Set objApp = CreateObject("Outlook.Application")
+        objApp.ActiveExplorer.Activate
+        Set myNamespace = objApp.GetNamespace("MAPI")
+        myNamespace.Logon "Default Outlook Profile", , False, True
+        myNamespace.SendAndReceive (True)
+        ' Wait till Send-Receive dialog disappears
+        Timeout 10
+'        ----------------------------------------------------------------------
+
+       Shell reportFolderCleanUpBatchFile
+
+       Call downloadSingleFile(path_emailTriggerConfig_Excel, machineName, projectRootPath)
+
+        dataToWriteAsString = "platformEnv=" & platformEnv
+
+        Call createFile(dataToWriteAsString, configFilePath)
+
+        Debug.Print "config file created"
+
+        Call createBatchFile(platformEnv, batchFileNameWithPath, projectRootPath)
+
+        Debug.Print "Batch file created with environment -" & platformEnv
+
+        '--------------- Trigger batch file execution and wait till it completes---------------
+
+        Dim strCommand As String
+        Dim lngErrorCode As Long
+        Dim wsh As WshShell
+        Set wsh = New WshShell
+
+        'Run the batch file using the WshShell object
+        strCommand = Chr(34) & batchFileNameWithPath & Chr(34)
+        lngErrorCode = wsh.Run(strCommand, windowStyle:=1, waitOnReturn:=True)
+        If lngErrorCode <> 0 Then
+           'MsgBox "Error! Something went wrong with the batch execution!"
+        Else
+            'Call Mail_PostExecution_Text_Outlook(platformEnv)
+        End If
+
+        '--------------- Send post-execution notification email ---------------
+
+        Debug.Print "Merging reports"
+        'Run the batch file using the WshShell object
+        strCommand = Chr(34) & reportMergingBatchFile & Chr(34)
+        lngErrorCode = wsh.Run(strCommand, windowStyle:=1, waitOnReturn:=True)
+        If lngErrorCode <> 0 Then
+           Debug.Print "Error! Something went wrong with merging reports!"
+        Else
+            'Call Mail_PostExecution_Text_Outlook(platformEnv)
+        End If
+
+        'Timeout 10
+        Debug.Print "Merged reports"
+        
+        Timeout 30
+
+        Dim statFileExists As String
+        Dim isStatsFileGenerated As String
+        Dim AutomationStatReportFileLocation As String
+        AutomationStatReportFileLocation = projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "AutomationStatReportFileLocation", machineName)
+
+        statFileExists = Dir(AutomationStatReportFileLocation)
+        
+        ifPrintingStatsRequired = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "ifPrintingStatsRequired", machineName)
+        
+        If InStr(LCase(ifPrintingStatsRequired), "yes") > 0 Then
+            If statFileExists = "" Then
+                Debug.Print "Stats file haven't created"
+                isStatsFileGenerated = "NOT_GENERATED"
+            Else
+                Debug.Print "Stats file created successfully"
+                isStatsFileGenerated = "GENERATED"
+            End If
+        Else
+            isStatsFileGenerated = "NOT_REQUIRED"
+        End If
+
+        Debug.Print "isStatsFileGenerated-->" & isStatsFileGenerated
+        
+        Call Mail_PostExecution_Text_Outlook(platformEnv, path_emailTriggerConfig_Excel, machineName, projectRootPath, isStatsFileGenerated, AutomationStatReportFileLocation, subject)
+        
+        taskkillBatchFile = projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "taskkillBatchFile", machineName)
+         Shell taskkillBatchFile
+               
+        '----------------------------------------------------------------------------------------------------------------------------
+        
+    End If
+Else
+    Debug.Print "Email Trigger for test execution not enabled."
+End If
+
+'Marking the email as READ
+MyMail.UnRead = False
+    
+End Sub
+
+Public Sub createBatchFile(platformEnv As String, batchFileNameWithPath As String, projectRootPath As String)
+
+Dim BatchFile As Integer
+Dim filePath As String
+Dim command1 As String
+Dim command2 As String
+Dim command3 As String
+Dim command4 As String
+Dim valueOfEnvironment As String
+'Dim valueOfProfileName As String
+'Dim testSuitePath As String
+Dim projectPath As String
+Dim browserName As String
+'Dim batchFileCreationPath As String
+Dim preExecutionCommand As String
+
+Debug.Print "Platform environment in file creation is :" & platformEnv
+
+' ---------------------- Enter Below Attribute values  ---------------------------------------------------------------------
+
+valueOfEnvironment = Chr(34) & platformEnv & Chr(34)
+
+projectPath = Chr(34) & projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectPath", machineName) & Chr(34)
+Debug.Print "projectPath-->" & projectPath
+
+testSuitePath_1 = Chr(34) & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "testSuitePath_1", machineName) & Chr(34)
+Debug.Print "testSuitePath_1 = " & testSuitePath_1
+testSuitePath_2 = Chr(34) & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "testSuitePath_2", machineName) & Chr(34)
+Debug.Print "testSuitePath_2 = " & testSuitePath_2
+
+apiKey = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "apiKey", machineName)
+Debug.Print "apiKey = " & apiKey
+browserName = Chr(34) & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "browserName", machineName) & Chr(34)
+Debug.Print "browserName = " & browserName
+katalonDriveName = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "katalonDriveName", machineName)
+katalonPath = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "katalonPath", machineName)
+
+'Debug.Print "projectPath = " & projectPath
+'Debug.Print "testSuitePath = " & testSuitePath
+'Debug.Print "apiKey = " & apiKey
+'Debug.Print "browserName = " & browserName
+'Debug.Print "valueOfEnvironment = " & valueOfEnvironment
+'Debug.Print "katalonDriveName = " & katalonDriveName
+'Debug.Print "katalonPath = " & katalonPath
+
+' -----------------------------------------------------------------------------------------------------------------------------------
+
+Debug.Print valueOfProfileName
+
+preExecutionCommand2 = "taskkill /F /T /IM katalon.exe"
+preExecutionCommand2 = "taskkill /F /T /IM katalonc.exe"
+preExecutionCommand3 = "taskkill /F /T /IM javaw.exe"
+
+command1 = katalonDriveName
+command2 = "cd " & katalonPath
+command3 = "katalonc -noSplash -runMode=console -consoleLog -projectPath=" & projectPath & " -retry=1 -retryStrategy=failedExecutions -testSuiteCollectionPath=" & testSuitePath_1 & " -g_platformEnv=" & valueOfEnvironment & " -browserType=" & browserName & " -apiKey=" & apiKey
+
+Debug.Print "Command 3 -->" & command3
+
+If InStr(1, testSuitePath_2, "NA") > 0 Then
+    command4 = ""
+Else
+    command4 = "katalonc -noSplash -runMode=console -consoleLog -projectPath=" & projectPath & " -retry=1 -retryStrategy=failedExecutions -testSuiteCollectionPath=" & testSuitePath_2 & " -g_platformEnv=" & valueOfEnvironment & " -browserType=" & browserName & " -apiKey=" & apiKey
+End If
+
+Debug.Print "Command 4 -->" & command4
+'MsgBox command4
+
+filePath = batchFileNameWithPath
+
+BatchFile = FreeFile
+
+Open filePath For Output As BatchFile
+
+' Print #BatchFile, preExecutionCommand1
+  Print #BatchFile, preExecutionCommand2
+  Print #BatchFile, preExecutionCommand3
+  Print #BatchFile, command1
+  Print #BatchFile, command2
+  Print #BatchFile, command3
+  Print #BatchFile, command4
+
+  Close BatchFile
+
+End Sub
+
+Public Sub createFile(dataToWriteAsString As String, filePath As String)
+Dim configFilePath As String
+Dim TextFile As Integer
+
+configFilePath = filePath
+TextFile = FreeFile
+Open filePath For Output As TextFile
+Print #TextFile, dataToWriteAsString
+
+Close TextFile
+
+End Sub
+
+
+
+

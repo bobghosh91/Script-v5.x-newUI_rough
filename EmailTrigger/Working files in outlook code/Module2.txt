@@ -1,0 +1,75 @@
+Sub Mail_small_Text_Outlook(platformEnvironment As String, path_emailTriggerConfig_Excel As String, machineName As String, subject As String)
+    Dim OutApp As Object
+    Dim OutMail As Object
+    Dim strBody As String
+    
+    Debug.Print platformEnv
+    
+    Dim senderEmailID As String
+    senderEmailID = verifyEmailAndOpen(subject)
+    Debug.Print ("senderEmailID is : " & senderEmailID)
+    
+    Set OutApp = CreateObject("Outlook.Application")
+    Set OutMail = OutApp.CreateItem(0)
+   
+Site = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "scriptCategory", machineName)
+emailBody = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "emailBodyPreExecutionMail", machineName)
+reportsAttachmentsFileFolder = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "reportsAttachmentsFileFolder", machineName)
+trialEmailToList = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "trialEmailToList", machineName)
+goLiveEmailToList = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "goLiveEmailToList", machineName)
+emailCcList = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "emailCcList", machineName)
+
+'    Debug.Print trialEmailToList
+'    Debug.Print goLiveEmailToList
+'    Debug.Print ("Site is : " & Site)
+'    Debug.Print ("emailBody is : " & emailBody)
+'    Debug.Print ("reportsAttachmentsFileFolder is : " & reportsAttachmentsFileFolder)
+    
+    strBody = emailBody & _
+             "<br>" & _
+             "<br>" & _
+             "<html>" & "<table>" & _
+             "<tr>" & "<td><b>" & "Machine" & "</b></td>" & "<td>" & ": " & machineName & _
+             "<tr>" & "<td><b>" & "Site" & "</b></td>" & "<td>" & ": " & Site & "</tr>" & _
+             "<tr>" & "<td><b>" & "Environment" & "</b></td>" & "<td>" & ": " & UCase(platformEnvironment) & "</tr>" & _
+             "<tr>" & "<td><b>" & "Triggered by" & "</b></td>" & "<td>" & ": " & senderEmailID & "</tr>" & _
+             "<tr>" & "<td><b>" & "Artifact" & "</b></td>" & "<td>" & ": " & fetchVerifiedBuildVersionFromTextFile(fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectVerifiedVersionFilePath", machineName)) & "</tr>" & _
+             "<tr>" & "<td><b>" & "Browser" & "</b></td>" & "<td>" & ": " & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "browserName", machineName) & "</tr>" & _
+             "</table>" & "</html>" & _
+             "<br />" & _
+             "Thanks," & vbNewLine & _
+             "<br />" & _
+             "Web Automation team"
+
+On Error Resume Next
+With OutMail
+    If InStr(Trim(senderEmailID), "Sayali.Dhoot@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "Vahid.Khochikar@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "qaguiautomationtest1@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "Tanmay.Kolawale@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "VedPrakash.Bisen@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "Mahesh.Patil@2020spaces.com") = 1 Then
+        result = 1
+        Debug.Print result
+        .To = trialEmailToList
+        .CC = emailCcList
+        .BCC = ""
+        .subject = "Trial Run to be started: " & Site & ":" & UCase(platformEnvironment)
+    Else
+        result = 0
+        Debug.Print result
+        .To = goLiveEmailToList
+        .CC = emailCcList
+        .BCC = ""
+        .subject = "GoLive Run to be started: " & Site & ":" & UCase(platformEnvironment)
+    End If
+
+'.Body = strBody
+.HTMLBody = strBody
+
+.Send   'or use .Display
+    
+    End With
+    On Error GoTo 0
+
+    Set OutMail = Nothing
+    Set OutApp = Nothing
+End Sub
+
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>LoginToCS</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>115c977b-235f-455d-8df8-2729d4560d61</testCaseGuid>
+   <variable>
+      <defaultValue>'qaguiautomationtest11@2020spaces.com'</defaultValue>
+      <description></description>
+      <id>1ad51e42-e1fd-44ed-ab9d-64b08d775646</id>
+      <masked>false</masked>
+      <name>userEmail</name>
+   </variable>
+</TestCaseEntity>

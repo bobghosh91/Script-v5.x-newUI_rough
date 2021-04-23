@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>select_Role</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5484df4a-a614-4c1d-8bd4-2ca75b798076</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>559414ad-eb4b-4692-bc13-9bf56ba8462e</id>
+      <masked>false</masked>
+      <name>role</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Catalog by Search</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8b41f93e-1b16-416e-b3cf-a3ccb5d2d65e</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>2a89e1e4-4566-42d2-a31e-c24b3a2ec939</id>
+      <masked>false</masked>
+      <name>catalogName</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>User_Creation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>88a91063-84e2-4fd1-b70f-dec4d2afa0c3</testCaseGuid>
+   <variable>
+      <defaultValue>'qaguiautomationtest11@2020spaces.com\r\n'</defaultValue>
+      <description></description>
+      <id>f3d1a830-8864-4d54-b34a-73d77c8b061b</id>
+      <masked>false</masked>
+      <name>userEmail</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>09b50c57-2d09-4c77-b4c2-736bcb4e29ee</id>
+      <masked>false</masked>
+      <name>userPassword</name>
+   </variable>
+</TestCaseEntity>

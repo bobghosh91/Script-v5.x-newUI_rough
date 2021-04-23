@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Catalog</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f8f22826-d453-4bc1-a0f5-c98771215f3d</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>790f4b17-5d85-4a9c-862e-82184dde7e04</id>
+      <masked>false</masked>
+      <name>catalogName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5629b440-2ae6-4f48-aadc-9a8c1f838905</id>
+      <masked>false</masked>
+      <name>market</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>fad9c3ba-4613-4fd4-b299-253ab418566f</id>
+      <masked>false</masked>
+      <name>company</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>4d55e879-7f27-48ed-8048-5a84c8f593cf</id>
+      <masked>false</masked>
+      <name>selectCatalog</name>
+   </variable>
+</TestCaseEntity>

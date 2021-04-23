@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>LoginToCS</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fc7fc148-cc8b-4163-afad-25293bf9ed71</testCaseGuid>
+   <variable>
+      <defaultValue>'qaguiautomationtest11@2020spaces.com'</defaultValue>
+      <description></description>
+      <id>6200f2a8-e93e-40d6-8a5b-e240915d7bb4</id>
+      <masked>false</masked>
+      <name>userEmail</name>
+   </variable>
+   <variable>
+      <defaultValue>'Auto123#'</defaultValue>
+      <description></description>
+      <id>6f4cbde1-26e2-4080-8e8d-4e5af446380f</id>
+      <masked>false</masked>
+      <name>Password</name>
+   </variable>
+</TestCaseEntity>

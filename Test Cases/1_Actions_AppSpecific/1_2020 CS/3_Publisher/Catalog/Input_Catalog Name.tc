@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_Catalog Name</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9a5d7dc7-443e-4a97-9d60-468500798a6b</testCaseGuid>
+   <variable>
+      <defaultValue>'Catalog1'</defaultValue>
+      <description></description>
+      <id>913de1b5-0114-424b-bd02-c45a0c1673e1</id>
+      <masked>false</masked>
+      <name>catalogName</name>
+   </variable>
+</TestCaseEntity>

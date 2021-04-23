@@ -1,0 +1,107 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Content Studio_1,Chrome 88.0.4324.182,,,2021-02-19 16:17:19,2021-02-19 16:35:44,18m - 25.387s,PASSED
+,,,,,,,
+Test Cases/2_TestCases/2_Content Studio/Login Page/294264- Login In Content Studio,Chrome 88.0.4324.182,,,2021-02-19 16:17:20,2021-02-19 16:18:07,46.670s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:17:20,2021-02-19 16:17:26,5.964s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/1_Login-Page/LoginToCS""), [""userEmail"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""UserEmail""), ""Password"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Password"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:17:26,2021-02-19 16:18:05,39.200s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:18:05,2021-02-19 16:18:07,1.341s,PASSED
+,,,,,,,
+Test Cases/2_TestCases/2_Content Studio/Publisher/294266 - Create a new Catalog,Chrome 88.0.4324.182,,,2021-02-19 16:18:07,2021-02-19 16:19:38,1m - 31.387s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:18:07,2021-02-19 16:18:14,7.292s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/1_Login-Page/LoginToCS""), [""userEmail"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""UserEmail""), ""Password"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Password"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:18:14,2021-02-19 16:18:37,22.478s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:18:37,2021-02-19 16:18:42,5.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/2_Company Selection/select_Company""), [""CompanyName"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CompanyName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:18:42,2021-02-19 16:18:50,8.518s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Click_Publisher""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:18:50,2021-02-19 16:18:58,7.762s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Catalog_Creation""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:18:58,2021-02-19 16:19:28,29.866s,PASSED
+delay(2),Chrome 88.0.4324.182,,,2021-02-19 16:19:28,2021-02-19 16:19:30,2.005s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Click_Show Filter""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:19:30,2021-02-19 16:19:31,1.400s,PASSED
+delay(2),Chrome 88.0.4324.182,,,2021-02-19 16:19:31,2021-02-19 16:19:33,2.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Search_Catalog""), [""catalogSearch"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CatalogName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:19:33,2021-02-19 16:19:34,0.679s,PASSED
+delay(3),Chrome 88.0.4324.182,,,2021-02-19 16:19:34,2021-02-19 16:19:37,3.002s,PASSED
+"genericFunctions.Utilities.waitForObjectToBeClickableAndClick(findTestObject(""Object Repository/1_Actions_AppSpecific/2_Content Studio/3_Publisher/button_edit_single_catalog""))",Chrome 88.0.4324.182,,,2021-02-19 16:19:37,2021-02-19 16:19:37,0.224s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:19:37,2021-02-19 16:19:38,1.021s,PASSED
+,,,,,,,
+Test Cases/2_TestCases/2_Content Studio/Publisher/294277 - Edit Catalog with WIP state,Chrome 88.0.4324.182,,,2021-02-19 16:19:38,2021-02-19 16:21:43,2m - 5.251s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:19:38,2021-02-19 16:19:43,5.097s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/1_Login-Page/LoginToCS""), [""userEmail"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""UserEmail""), ""Password"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Password"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:19:43,2021-02-19 16:19:59,15.062s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:19:59,2021-02-19 16:20:04,5.001s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/2_Company Selection/select_Company""), [""CompanyName"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CompanyName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:20:04,2021-02-19 16:20:12,8.393s,PASSED
+delay(2),Chrome 88.0.4324.182,,,2021-02-19 16:20:12,2021-02-19 16:20:14,2.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Click_Publisher""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:20:14,2021-02-19 16:20:21,7.179s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Catalog_Creation""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:20:21,2021-02-19 16:20:51,29.371s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:20:51,2021-02-19 16:20:56,5.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Click_Show Filter""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:20:56,2021-02-19 16:20:57,1.301s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/select_Filter_Catalog_Status""), [""statusLabel"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CatalogFilterStatus"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:20:57,2021-02-19 16:20:58,1.598s,PASSED
+delay(2),Chrome 88.0.4324.182,,,2021-02-19 16:20:58,2021-02-19 16:21:00,2.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Search_Catalog""), [""catalogSearch"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CatalogName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:00,2021-02-19 16:21:01,0.496s,PASSED
+delay(3),Chrome 88.0.4324.182,,,2021-02-19 16:21:01,2021-02-19 16:21:04,3.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Click_Edit_Single_Catalog""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:04,2021-02-19 16:21:05,1.390s,PASSED
+delay(3),Chrome 88.0.4324.182,,,2021-02-19 16:21:05,2021-02-19 16:21:08,3.004s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/2_Edit_Catalog/Select_UOM""), [""UOM"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""UOM2"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:08,2021-02-19 16:21:09,0.328s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/2_Edit_Catalog/Select_Currency""), [""currency"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Currency2"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:09,2021-02-19 16:21:09,0.313s,PASSED
+delay(3),Chrome 88.0.4324.182,,,2021-02-19 16:21:09,2021-02-19 16:21:12,3.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/2_Edit_Catalog/editSelectUnselect_Language""), [""Language"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Language1"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:12,2021-02-19 16:21:14,1.613s,PASSED
+delay(3),Chrome 88.0.4324.182,,,2021-02-19 16:21:14,2021-02-19 16:21:17,3.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/2_Edit_Catalog/editSelectUnselect_Language""), [""Language"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Language2"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:17,2021-02-19 16:21:18,1.500s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/2_Edit_Catalog/Click_OK for Catalog Edit""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:18,2021-02-19 16:21:23,5.370s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:21:23,2021-02-19 16:21:28,5.004s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Click_Catalog-Authoring""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:28,2021-02-19 16:21:31,2.372s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:21:31,2021-02-19 16:21:36,5.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Select_Catalog by Search""), [""catalogName"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CatalogName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:36,2021-02-19 16:21:42,6.116s,PASSED
+"strLang = getText(findTestObject(""Object Repository/1_Actions_AppSpecific/2_Content Studio/4_Author/select_language-dropdown""))",Chrome 88.0.4324.182,,,2021-02-19 16:21:42,2021-02-19 16:21:42,0.121s,PASSED
+"strCurr = getText(findTestObject(""1_Actions_AppSpecific/2_Content Studio/4_Author/table_td-currency""))",Chrome 88.0.4324.182,,,2021-02-19 16:21:42,2021-02-19 16:21:42,0.098s,PASSED
+"strUOM = getText(findTestObject(""1_Actions_AppSpecific/2_Content Studio/4_Author/table_td-uom""))",Chrome 88.0.4324.182,,,2021-02-19 16:21:42,2021-02-19 16:21:42,0.100s,PASSED
+"genericFunctions.Assertions.valueEqualityAssertion(strLang, genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Language2""), ""Expected and actual language string not equal"")",Chrome 88.0.4324.182,,,2021-02-19 16:21:42,2021-02-19 16:21:42,0.029s,PASSED
+"genericFunctions.Assertions.valueEqualityAssertion(strUOM, genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""UOM2""), ""Expected and actual UOM string not equal"")",Chrome 88.0.4324.182,,,2021-02-19 16:21:42,2021-02-19 16:21:42,0.022s,PASSED
+"genericFunctions.Assertions.valueEqualityAssertion(strCurr, genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Currency2""), ""Expected and actual currency string not equal"")",Chrome 88.0.4324.182,,,2021-02-19 16:21:42,2021-02-19 16:21:42,0.024s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:21:42,2021-02-19 16:21:43,1.098s,PASSED
+,,,,,,,
+Test Cases/2_TestCases/2_Content Studio/Authoring/294452 - Importing PAF and Catalog Assets on new catalog,Chrome 88.0.4324.182,,,2021-02-19 16:21:43,2021-02-19 16:28:22,6m - 38.300s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:21:43,2021-02-19 16:21:50,6.625s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/1_Login-Page/LoginToCS""), [""userEmail"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""UserEmail""), ""Password"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Password"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:21:50,2021-02-19 16:22:14,23.828s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:22:14,2021-02-19 16:22:19,5.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/2_Company Selection/select_Company""), [""CompanyName"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CompanyName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:22:19,2021-02-19 16:22:28,8.413s,PASSED
+delay(2),Chrome 88.0.4324.182,,,2021-02-19 16:22:28,2021-02-19 16:22:30,2.004s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Click_Publisher""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:22:30,2021-02-19 16:22:37,7.317s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Catalog_Creation""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:22:37,2021-02-19 16:23:06,29.438s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:23:06,2021-02-19 16:23:11,5.004s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Click_Catalog-Authoring""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:23:11,2021-02-19 16:23:14,2.293s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:23:14,2021-02-19 16:23:19,5.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Select_Catalog by Search""), [""catalogName"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CatalogName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:23:19,2021-02-19 16:23:25,6.009s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:23:25,2021-02-19 16:23:30,5.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Import_PAF""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:23:30,2021-02-19 16:27:38,4m - 7.972s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:27:38,2021-02-19 16:27:43,5.000s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Import_Catalog Assets""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:27:43,2021-02-19 16:28:20,37.815s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:28:20,2021-02-19 16:28:22,1.367s,PASSED
+,,,,,,,
+Test Cases/2_TestCases/2_Content Studio/Authoring/393610 - To generate Release Note for Base Version of a catalog,Chrome 88.0.4324.182,,,2021-02-19 16:28:22,2021-02-19 16:35:44,7m - 22.276s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:28:22,2021-02-19 16:28:29,7.498s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/1_Login-Page/LoginToCS""), [""userEmail"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""UserEmail""), ""Password"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Password"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:28:29,2021-02-19 16:29:06,36.130s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:29:06,2021-02-19 16:29:11,5.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/1_Action_Common/2_Company Selection/select_Company""), [""CompanyName"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CompanyName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:29:11,2021-02-19 16:29:19,8.415s,PASSED
+delay(2),Chrome 88.0.4324.182,,,2021-02-19 16:29:19,2021-02-19 16:29:21,2.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Click_Publisher""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:29:21,2021-02-19 16:29:29,7.957s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/3_Publisher/Catalog_Creation""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:29:29,2021-02-19 16:29:58,29.374s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:29:58,2021-02-19 16:30:03,5.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Click_Catalog-Authoring""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:30:03,2021-02-19 16:30:06,2.302s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:30:06,2021-02-19 16:30:11,5.001s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Select_Catalog by Search""), [""catalogName"":genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""CatalogName"")], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:30:11,2021-02-19 16:30:17,6.027s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:30:17,2021-02-19 16:30:22,5.003s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Import_PAF""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:30:22,2021-02-19 16:34:29,4m - 7.703s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:34:29,2021-02-19 16:34:34,5.001s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Import_Catalog Assets""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:34:34,2021-02-19 16:35:12,37.688s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:35:12,2021-02-19 16:35:17,5.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Click_Release_Note""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:35:17,2021-02-19 16:35:21,3.470s,PASSED
+delay(5),Chrome 88.0.4324.182,,,2021-02-19 16:35:21,2021-02-19 16:35:26,5.002s,PASSED
+"callTestCase(findTestCase(""1_Actions_AppSpecific/2_Content Studio/4_Author/Generate_Release_Note""), [:], STOP_ON_FAILURE)",Chrome 88.0.4324.182,,,2021-02-19 16:35:26,2021-02-19 16:35:32,6.651s,PASSED
+delay(10),Chrome 88.0.4324.182,,,2021-02-19 16:35:32,2021-02-19 16:35:42,10.002s,PASSED
+formatter = new java.text.SimpleDateFormat(M/dd/yyyy),Chrome 88.0.4324.182,,,2021-02-19 16:35:42,2021-02-19 16:35:42,0.000s,PASSED
+date = new java.util.Date(),Chrome 88.0.4324.182,,,2021-02-19 16:35:42,2021-02-19 16:35:42,0.001s,PASSED
+currentDate = formatter.format(date),Chrome 88.0.4324.182,,,2021-02-19 16:35:42,2021-02-19 16:35:42,0.000s,PASSED
+"strVer = getText(findTestObject(""1_Actions_AppSpecific/2_Content Studio/4_Author/subtitle_Version""))",Chrome 88.0.4324.182,,,2021-02-19 16:35:42,2021-02-19 16:35:42,0.157s,PASSED
+"strDate = getText(findTestObject(""1_Actions_AppSpecific/2_Content Studio/4_Author/subtitle_Published_Date""))",Chrome 88.0.4324.182,,,2021-02-19 16:35:42,2021-02-19 16:35:43,0.137s,PASSED
+"strnote = getText(findTestObject(""1_Actions_AppSpecific/2_Content Studio/4_Author/subtitle_Release_Note""))",Chrome 88.0.4324.182,,,2021-02-19 16:35:43,2021-02-19 16:35:43,0.139s,PASSED
+"genericFunctions.Assertions.valueEqualityAssertion(strVer, genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""VersionText""), ""Expected and actual Version Text string not equal"")",Chrome 88.0.4324.182,,,2021-02-19 16:35:43,2021-02-19 16:35:43,0.021s,PASSED
+"genericFunctions.Assertions.valueEqualityAssertion(strDate, currentDate, ""Expected and actual Published Date string not equal"")",Chrome 88.0.4324.182,,,2021-02-19 16:35:43,2021-02-19 16:35:43,0.001s,PASSED
+"genericFunctions.Assertions.valueEqualityAssertion(strnote, genericFunctions.DataProcessing.readTestDataFromExcelFile(currentTestCaseID, ""Release Note""), ""Expected and actual currency string not equal"")",Chrome 88.0.4324.182,,,2021-02-19 16:35:43,2021-02-19 16:35:43,0.025s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 88.0.4324.182,,,2021-02-19 16:35:43,2021-02-19 16:35:44,1.318s,PASSED

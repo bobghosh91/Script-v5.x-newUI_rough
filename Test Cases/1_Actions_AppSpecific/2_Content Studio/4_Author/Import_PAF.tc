@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Import_PAF</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6301d2bf-bd64-4a75-b7bb-59fb999a83d7</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e0163701-5cff-4c79-ab97-a7aa91857bce</id>
+      <masked>false</masked>
+      <name>importPAF</name>
+   </variable>
+</TestCaseEntity>

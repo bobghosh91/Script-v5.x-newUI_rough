@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_City</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d5cea66e-6b01-4cf0-a753-2a56d6c7ae60</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>8d11ae26-46e9-4e62-b878-cf652d9d2cb9</id>
+      <masked>false</masked>
+      <name>City</name>
+   </variable>
+</TestCaseEntity>

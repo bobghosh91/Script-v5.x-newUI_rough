@@ -1,0 +1,77 @@
+Public Function verifyEmailAndOpen(strSubject) As String
+
+    StopFlag = False
+    expSubject = strSubject
+
+    Set objApp = CreateObject("Outlook.Application")
+    objApp.ActiveExplorer.Activate
+   Set myNamespace = objApp.GetNamespace("MAPI")
+    myNamespace.Logon "Default Outlook Profile", , False, True
+    myNamespace.SendAndReceive (True)
+
+    For i = 5 To 20
+    Set objApp.ActiveExplorer.CurrentFolder = myNamespace.GetDefaultFolder(CInt(i))
+    If objApp.ActiveExplorer.CurrentFolder.Name = "Inbox" Then
+    Exit For
+    End If
+    Next
+     
+    Set objFolder = objApp.ActiveExplorer.CurrentFolder
+    objFolder.Display
+  
+    If Not objFolder Is Nothing Then
+  
+    Dim bodyStringSplitLine
+    Dim str
+            
+    Set objFolder = objApp.ActiveExplorer.CurrentFolder
+
+    LoopCount = 0
+    Do
+    StopFlag = False
+    '          Delay 3000
+    LoopCount = LoopCount + 1
+    '           Log.Message "Start Round : " & LoopCount
+    Set colItems = objFolder.Items
+    Set colFilteredItems = colItems.Restrict("[Unread]= true")
+
+    For K = 1 To colFilteredItems.Count
+    If InStr(LCase(Trim(colFilteredItems(K).subject)), LCase(Trim(expSubject))) > 0 Or InStr(LCase(Trim(colFilteredItems(K).subject)), LCase(Trim(expSubject))) = 1 Then
+    StopFlag = True
+    
+'    MsgBox colFilteredItems(K).SendUsingAccount.SmtpAddress
+'    senderEmailID = colFilteredItems(K).SendUsingAccount.SmtpAddress
+
+    senderEmailID = colFilteredItems(K).Sender.Name
+    senderEmailID = Replace(senderEmailID, " ", ".") & "@2020spaces.com"
+
+'-------------------------------
+'    MsgBox senderEmailID
+'-------------------------------
+
+    Exit For
+    Set colFilteredItems = colItems.Restrict("[Unread]=true")
+    End If
+    Set colFilteredItems = colItems.Restrict("[Unread]=true")
+    If StopFlag Then
+    Exit For
+   Exit Do
+    End If
+    Next
+    Loop Until (StopFlag = True Or LoopCount = 5)
+
+    If Not StopFlag Then
+    '      Log.Error "Email with subject [" & ExpSubject & "] not found"
+    End If
+    Else
+    '    Log.Error "Inbox folder not found"
+    End If
+
+'  Debug.Print senderEmailID
+    verifyEmailAndOpen = senderEmailID
+    Debug.Print ("Rule has been applied for subject :" & colFilteredItems(K).subject & " and with sender :" & senderEmailID)
+
+End Function
+
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Select Catalog Status according to input of Lable</description>
+   <name>select_Filter_Catalog_Status</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e85918e7-49c2-4d54-8e7a-8bfa8dc2716e</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e8ae3a38-698f-453f-8f5d-5d023307974d</id>
+      <masked>false</masked>
+      <name>statusLabel</name>
+   </variable>
+</TestCaseEntity>

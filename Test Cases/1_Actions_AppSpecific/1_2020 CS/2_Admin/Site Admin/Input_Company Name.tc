@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_Company Name</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b6ca896e-ffb9-4e88-be44-8b90a4c4f603</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>28973e09-5326-4cfa-adef-d69d821d525a</id>
+      <masked>false</masked>
+      <name>companyName</name>
+   </variable>
+</TestCaseEntity>

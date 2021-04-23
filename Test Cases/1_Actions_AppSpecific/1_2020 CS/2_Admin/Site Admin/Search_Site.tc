@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search_Site</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>95b09d94-f52b-4577-b2df-878cf7a2283f</testCaseGuid>
+   <variable>
+      <defaultValue>'App-QA'</defaultValue>
+      <description></description>
+      <id>b86d4ab4-378c-4cb6-8cf2-383dfb9fecac</id>
+      <masked>false</masked>
+      <name>siteSearch</name>
+   </variable>
+</TestCaseEntity>

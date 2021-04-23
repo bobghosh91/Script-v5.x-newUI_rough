@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_toggleForEssentialCust</name>
+   <tag></tag>
+   <elementGuidId>e34737d5-2214-4e7e-b52c-d04067fa4e7b</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//li[@id=&quot;launch-option-customerEssentials&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//li[@id=&quot;launch-option-customerEssentials&quot;]</value>
+   </webElementProperties>
+</WebElementEntity>

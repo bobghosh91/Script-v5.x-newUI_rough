@@ -1,0 +1,153 @@
+Public Sub runBatch(MyMail As MailItem)
+Dim msgInBody As String
+Dim msgBodyForQA As String
+Dim msgBodyForStaging As String
+Dim msgBodyForPreProd As String
+Dim msgBodyForProd As String
+Dim subject As String
+Dim platformEnv As String
+Dim batchFileToExecuteWithPath As String
+
+Dim valueOfProfileName1 As String
+Dim testSuitePath1 As String
+Dim batchFileCreationPath1 As String
+
+Dim valueOfProfileName2 As String
+Dim testSuitePath2 As String
+Dim batchFileCreationPath2 As String
+
+
+'msgBodyForQA = LCase("Execute:2020 Metric:QA:Chrome")
+'msgBodyForStaging = LCase("Execute:Staging:Chrome")
+'msgBodyForPreProd = LCase("Execute:PreProd:Chrome")
+'msgBodyForProd = LCase("Execute:Prod:Chrome")
+'subject.IgnoreCase = True
+subject = LCase(MyMail.subject)
+'msgInBody = LCase(MyMail.Body)
+
+' ---------------------- Enter Below Attribute values  -----------------------------------------------------------------------------
+
+batchFileToExecuteWithPath = "C:\Users\dhoosa\Desktop\KatalonCallingScheduler_MetricMaster.bat"
+
+valueOfProfileName1 = Chr(34) & "2020 Metric" & Chr(34)
+testSuitePath1 = Chr(34) & "Test Suites/2020 Metric_1" & Chr(34)
+batchFileCreationPath1 = "C:\Users\dhoosa\Desktop\Metric_1.bat"
+
+valueOfProfileName2 = Chr(34) & "2020 Metric" & Chr(34)
+testSuitePath2 = Chr(34) & "Test Suites/2020 Metric_2" & Chr(34)
+batchFileCreationPath2 = "C:\Users\dhoosa\Desktop\Metric_2.bat"
+
+' -----------------------------------------------------------------------------------------------------------------------------------
+
+'Debug.Print subject
+
+   If (InStr(1, subject, "re:") = 0 And InStr(1, subject, "fw:") = 0) Then
+   
+   
+        If InStr(1, subject, "golive:qa") > 0 Then
+  '          MsgBox "QA environment"
+             platformEnv = "qa"
+  '          Shell "C:\Users\dhoosa\Desktop\qam.bat"
+        ElseIf (InStr(1, subject, "golive:staging") > 0) Then
+              platformEnv = "staging-azure"
+        Else
+             Exit Sub
+        End If
+    
+'Debug.Print msgInBody
+'sleepText
+'selectDeselect
+'sleepText
+        downloadSingleFile
+
+        Call createBatchFile(platformEnv, testSuitePath1, valueOfProfileName1, batchFileCreationPath1)
+        Call createBatchFile(platformEnv, testSuitePath2, valueOfProfileName2, batchFileCreationPath2)
+        
+        Debug.Print "Batch file created with environment -" & platformEnv
+    '   toCallOtherTextfilecreate
+    '   Debug.Print "Select-deselect done"
+        Shell batchFileToExecuteWithPath
+        Debug.Print "batch File started"
+    End If
+    
+End Sub
+
+
+Public Sub createBatchFile(platformEnv As String, testSuitePath As String, valueOfProfileName As String, batchFileCreationPath As String)
+'Public Sub TextFile_Create()
+
+Dim BatchFile As Integer
+Dim FilePath As String
+Dim command1 As String
+Dim command2 As String
+Dim command3 As String
+Dim valueOfEnvironment As String
+'Dim valueOfProfileName As String
+'Dim testSuitePath As String
+Dim projectPath As String
+Dim browserName As String
+'Dim batchFileCreationPath As String
+Dim preExecutionCommand As String
+
+Debug.Print "Platform environment in file creation is :" & platformEnv
+
+' ---------------------- Enter Below Attribute values  -----------------------------------------------------------------------------
+
+projectPath = Chr(34) & "E:\TFS\QA Automations\IdealSpacesAutomation\IdealSpaces 6.0\Script v5.x\Script v5.x.prj" & Chr(34)
+'batchFileCreationPath = "C:\Users\dhoosa\Desktop\Metric_1.bat"
+'valueOfProfileName = Chr(34) & "2020 Metric" & Chr(34)
+'valueOfProfileName = Chr(34) & "Cabinets.com" & Chr(34)
+'testSuitePath = Chr(34) & "Test Suites/2020 Metric" & Chr(34)
+browserName = Chr(34) & "Chrome" & Chr(34)
+valueOfEnvironment = Chr(34) & platformEnv & Chr(34)
+katalonDriveName = "E:"
+katalonPath = "Katalon setup\Katalon_Studio_Windows_64-6.1.1 (2)\Katalon_Studio_Windows_64-6.1.1"
+
+' -----------------------------------------------------------------------------------------------------------------------------------
+
+Debug.Print valueOfProfileName
+ 
+If (valueOfProfileName = Chr(34) & "Cabinets.com" & Chr(34) And platformEnv = "staging-azure") Then
+    valueOfEnvironment = Chr(34) & "staging-aws" & Chr(34)
+End If
+
+'Debug.Print "Value of environment is " & valueOfEnvironment
+'Debug.Print "batchFileLocation--> " & batchFileCreationPath
+'Debug.Print platformEnv
+
+preExecutionCommand2 = "taskkill /F /T /IM katalon.exe"
+preExecutionCommand3 = "taskkill /F /T /IM javaw.exe"
+
+command1 = katalonDriveName
+command2 = "cd " & katalonPath
+'command3 = "katalon -noSplash  -runMode=console -consoleLog -noExit -projectPath=""E:\TFS\QA Automations\IdealSpacesAutomation\IdealSpaces 6.0\Script v4.x\Script v4.x.prj"" -retry=0 -testSuitePath=""Test Suites/2020 Metric"" -executionProfile=""2020 Metric"" -browserType=""Chrome"" -g_platformEnv=""staging-azure"""
+command3 = "katalon -noSplash  -runMode=console -consoleLog -projectPath=" & projectPath & " -retry=1 -testSuitePath=" & testSuitePath & " -executionProfile=" & valueOfProfileName & " -browserType=" & browserName & " -g_platformEnv=" & valueOfEnvironment
+
+'-noExit
+
+Debug.Print "Command 3 -->" & command3
+
+'file path and name for the new text file
+  FilePath = batchFileCreationPath
+
+'Determine the next file number available for use by the FileOpen function
+  BatchFile = FreeFile
+
+'Open the text file
+  Open FilePath For Output As BatchFile
+
+'Write some lines of text
+' Print #BatchFile, preExecutionCommand1
+  Print #BatchFile, preExecutionCommand2
+  Print #BatchFile, preExecutionCommand3
+  Print #BatchFile, command1
+  Print #BatchFile, command2
+  Print #BatchFile, command3
+
+'Save & Close Text File
+  Close BatchFile
+
+End Sub
+
+
+

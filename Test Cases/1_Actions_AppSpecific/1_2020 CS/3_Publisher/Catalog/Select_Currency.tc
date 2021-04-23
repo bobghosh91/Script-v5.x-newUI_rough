@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Currency</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0b2ac459-7528-4bd9-aa93-e9536cff9889</testCaseGuid>
+   <variable>
+      <defaultValue>'United States Dollar (USD)'</defaultValue>
+      <description></description>
+      <id>8690fd84-d38a-4c94-ba20-b4466975c510</id>
+      <masked>false</masked>
+      <name>currency</name>
+   </variable>
+</TestCaseEntity>

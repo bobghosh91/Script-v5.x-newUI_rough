@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Market for Company</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9eb4b7a5-d3d2-4c62-9572-e0b8c867fa61</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d8b5c9d4-9644-4e05-98e4-91de67e4ad86</id>
+      <masked>false</masked>
+      <name>marketName</name>
+   </variable>
+</TestCaseEntity>

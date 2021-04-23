@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Import_PAF</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4928418f-475e-4253-b005-8a9ea642267f</testCaseGuid>
+   <variable>
+      <defaultValue>'C:\\\\Users\\\\kudksh\\\\Documents\\\\MCS1710_013_03_PAF050_SubConfig\\\\PAFGeni0309(1.0).zip'</defaultValue>
+      <description></description>
+      <id>9c630ade-fc01-44e9-946f-0f85aa79c9cc</id>
+      <masked>false</masked>
+      <name>importPAF</name>
+   </variable>
+</TestCaseEntity>

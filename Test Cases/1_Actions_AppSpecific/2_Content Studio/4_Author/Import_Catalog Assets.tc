@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Import_Catalog Assets</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e5e9d6b2-74b9-44ad-9448-d9402cf7abdc</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d77d6327-0787-4ad4-b0d1-df46268bfb06</id>
+      <masked>false</masked>
+      <name>importPAF</name>
+   </variable>
+</TestCaseEntity>

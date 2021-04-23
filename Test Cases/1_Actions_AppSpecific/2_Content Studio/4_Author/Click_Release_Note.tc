@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Click_Release_Note</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9da67612-4eb1-4f0b-8a08-1d06fb073f0b</testCaseGuid>
+   <variable>
+      <defaultValue>'Catalog'</defaultValue>
+      <description></description>
+      <id>b7abd16e-e8a6-4287-bca3-6fab2f100f68</id>
+      <masked>false</masked>
+      <name>releaseNote</name>
+   </variable>
+</TestCaseEntity>

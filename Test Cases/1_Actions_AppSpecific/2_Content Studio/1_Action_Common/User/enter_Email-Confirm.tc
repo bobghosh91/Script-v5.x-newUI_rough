@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>enter_Email-Confirm</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0e32cb8b-2dbc-4268-b0d0-6bcd69c2eeb2</testCaseGuid>
+   <variable>
+      <defaultValue>'joe215@dispostable.com'</defaultValue>
+      <description></description>
+      <id>9a816a73-b150-462a-bd5b-f9dab8e52156</id>
+      <masked>false</masked>
+      <name>EmailComfirm</name>
+   </variable>
+</TestCaseEntity>

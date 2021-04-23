@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>fillAccountDetailsandSignUp</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>224d04e0-1055-416e-b3da-750780a9e29f</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>2214512a-925c-4fae-adc6-1258f4e42711</id>
+      <masked>false</masked>
+      <name>Email</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>32246ff5-43b4-410f-86bc-f566d2511662</id>
+      <masked>false</masked>
+      <name>Password</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d90e487d-4293-480d-acd9-411a8eba75ac</id>
+      <masked>false</masked>
+      <name>FName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bef94ba7-1dd7-4010-9883-04f0194ee0fa</id>
+      <masked>false</masked>
+      <name>LName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>44734173-71db-4ab4-8fa3-1c829e18d11d</id>
+      <masked>false</masked>
+      <name>Market</name>
+   </variable>
+</TestCaseEntity>

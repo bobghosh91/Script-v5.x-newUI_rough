@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>searchAndDeleteProject</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5cca1704-b92e-435b-9249-69d7b38dca1e</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c68c8479-1642-4560-9755-02166c88e2c6</id>
+      <masked>false</masked>
+      <name>projectName</name>
+   </variable>
+</TestCaseEntity>

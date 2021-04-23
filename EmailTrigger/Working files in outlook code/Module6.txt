@@ -1,0 +1,198 @@
+Dim columnCount As Integer
+Dim rowCount As Integer
+
+'Function main()
+'
+'Dim AutomationStatReportFileLocation As String
+'Dim listOfColumnsToPrint As Variant
+'Dim path_emailTriggerConfig_Excel As String
+'Dim machineName As String
+'
+'machineName = "pc-auto1"
+'listOfColumnsToPrint = Array("FileName", "NOTEXECUTED", "Passed", "Failed", "FAILED - Img vs NonImg")
+'path_emailTriggerConfig_Excel = "D:\QA Automations\Email macros\Parameterization\Email Trigger Config.xlsx"
+'projectRootPath = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectRootPath", machineName) & "\" & fetchVerifiedBuildVersionFromTextFile(fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectVerifiedVersionFilePath", machineName))
+'
+'AutomationStatReportFileLocation = "D:\QA Automations\Local Builds\Script v5.x_builds\Script v5.x -  169432 - Test1\External Libraries\reportsFolder\AutomationStatReport.xlsx"
+''AutomationStatReportFileLocation = projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "AutomationStatReportFileLocation", machineName)
+'
+'Debug.Print "AutomationStatReportFileLocation-->" & AutomationStatReportFileLocation
+'
+'htmlStr = fetchExcelDataMatrix(AutomationStatReportFileLocation, listOfColumnsToPrint)
+'Debug.Print htmlStr
+'
+'End Function
+
+
+Function readColumnData(columnName As String, dataMatrix As Variant, dataMatrixIndex As Integer)
+'UpdatebyExtendoffice20161222
+      Dim x As Integer
+      Dim ColRowAddress As String
+      Dim NumRows As Integer
+
+      Timeout 5
+    Debug.Print ("Inside readColumnData - step 1")
+
+      ColRowAddress = getColumnByColumnName(columnName)
+    Timeout 5
+      
+     Debug.Print ("Inside readColumnData - step 2")
+      
+      NumRows = Range(ColRowAddress, Range(ColRowAddress).End(xlDown)).Rows.Count
+
+      ' Select cell a1.
+      Range(ColRowAddress).Select
+
+      For x = 1 To NumRows
+        dataMatrix(dataMatrixIndex, x) = CStr(ActiveCell.Value)
+        ActiveCell.Offset(1, 0).Select
+      Next
+
+      readColumnData = dataMatrix
+
+End Function
+
+Function getColumnByColumnName(columnName As String)
+
+Dim x As Integer
+
+Debug.Print ("Inside getColumnByColumnName - step 1")
+
+    Timeout 5
+
+Debug.Print ("Inside getColumnByColumnName - step 2")
+    
+    cellValue = ActiveCell.Value
+       
+    For x = 1 To columnCount
+    ' Selects cell down 1 row from active cell.
+   
+    Debug.Print ("Inside for loop getColumnByColumnName - step 3")
+
+        isRequiredColumn = StrComp(cellValue, columnName, vbTextCompare)   '0 – if strings are equal;
+              
+        If (isRequiredColumn = 0) Then '0 – if strings are equal;
+            ColRowAddress = Replace(ActiveCell.Offset(0, x - 1).Address, "$", "")
+            getColumnByColumnName = ColRowAddress
+            Exit Function
+        End If
+
+    cellValue = ActiveCell.Offset(0, x).Value
+        
+        Next
+
+End Function
+
+
+Function fetchExcelDataMatrix(ExcelFilePath As String, listOfColumnsToPrint As Variant) As String
+
+'Function fetchEAs New Excel.Application
+    Dim objExcel
+    Set objExcel = New Excel.Application
+    Dim exWb As Excel.Workbook
+    Dim exWs As Excel.Worksheet
+    Dim exWsFn As Excel.WorksheetFunction
+    Dim rowNo As Integer
+    Dim columnNo As Integer
+    Dim Column As String
+    Dim rng As Excel.Range
+
+    Set exWb = objExcel.Workbooks.Open(ExcelFilePath)
+    Set exWs = exWb.Worksheets("Statistics")
+    
+'    On Error GoTo Finally
+    Timeout 20
+
+With exWb
+    With esWs
+                  
+    columnCount = exWs.UsedRange.Columns(exWs.UsedRange.Columns.Count).Column
+    rowCount = exWs.UsedRange.Rows(exWs.UsedRange.Rows.Count).row
+
+    Dim dataMatrix()
+ '  ReDim dataMatrix(1 To rowCount + 1, 1 To columnCount + 1)
+    ReDim dataMatrix(1 To columnCount + 1, 1 To rowCount + 1)
+
+    Dim dataMatrixIndex As Integer
+    
+    Debug.Print ("Inside fetchExcelDataMatrix - step 1")
+    Timeout 10
+    
+ '-------------------------------------------------------------------------------------------------------------------
+        ' For each column read column data
+        For dataMatrixIndex = 0 To UBound(listOfColumnsToPrint)
+    
+        Set rng = Excel.Range("A1")
+        rng.Activate
+        Debug.Print ("Inside for loop fetchExcelDataMatrix - step 2")
+        Column = listOfColumnsToPrint(dataMatrixIndex)
+        dataMatrix = readColumnData(Column, dataMatrix, dataMatrixIndex + 1)
+        Debug.Print "dataMatrixIndex-->" & dataMatrixIndex
+        Debug.Print "column-->" & Column
+    Next
+    
+    'Wait for 5 seconds
+     End With
+    End With
+        
+    Timeout 10
+
+    For dataMatrixIndex = 0 To UBound(listOfColumnsToPrint)
+        For i = 0 To rowCount - 1
+           Debug.Print dataMatrix(dataMatrixIndex + 1, i + 1)
+        Next
+    Next
+   
+ '-------------------------------------------------------------------------------------------------------------------
+       
+    Timeout 10
+
+    fetchExcelDataMatrix = getHTMLFromDataMatrix(dataMatrix, UBound(listOfColumnsToPrint))
+
+objExcel.Workbooks.Close
+
+ExitRoutine:
+        Set exWb = Nothing
+        Set objExcel = Nothing
+        
+'Finally:
+   
+End Function
+
+Function getHTMLFromDataMatrix(dataMatrix As Variant, dataMetrixColumnCount As Integer)
+
+Dim str As String
+Dim row As Integer
+
+str = "<table style='border: 1px solid black;border-collapse: collapse'>"
+
+For x = 1 To rowCount
+    str = str & "<tr style='border: 1px solid black;border-collapse: collapse'>"
+    For y = 1 To dataMetrixColumnCount + 1
+        If (x = 1) Then
+            str = str & "<th style='border: 1px solid black;border-collapse: collapse;text-align: left;margin-left: 5px;margin-right: 5px'>" + CStr(dataMatrix(y, x)) + "</th>"
+        Else
+            If (y = 1) Then
+                str = str & "<td style='border: 1px solid black;border-collapse: collapse;margin-left: 5px;margin-right: 5px'>" + CStr(dataMatrix(y, x)) + "</td>"
+            Else
+                str = str & "<td style='border: 1px solid black;border-collapse: collapse;text-align: center;margin-left: 5px;margin-right: 5px'>" + CStr(dataMatrix(y, x)) + "</td>"
+            End If
+        End If
+    Next
+    str = str & "</tr>"
+    Next
+str = str & "</table>"
+
+getHTMLFromDataMatrix = str
+
+End Function
+
+Public Sub Timeout(how_many_seconds As Double)
+Starting_Time = Timer
+
+Do
+    DoEvents
+Loop Until (Timer - Starting_Time) >= how_many_seconds
+
+End Sub
+

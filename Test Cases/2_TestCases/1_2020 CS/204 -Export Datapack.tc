@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>204 -Export Datapack</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>da7981d4-9f31-4564-942d-6a2bf91b3cb1</testCaseGuid>
+   <variable>
+      <defaultValue>'false'</defaultValue>
+      <description></description>
+      <id>86c653d7-b797-4e65-834f-60899a91d326</id>
+      <masked>false</masked>
+      <name>useBrowserSessionOfThisTestForNextTest</name>
+   </variable>
+</TestCaseEntity>

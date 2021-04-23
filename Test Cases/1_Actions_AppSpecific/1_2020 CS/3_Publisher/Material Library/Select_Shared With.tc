@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Shared With</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6fe4ef98-7900-4f8a-9ac9-91f1f5809ea5</testCaseGuid>
+   <variable>
+      <defaultValue>'Everyone'</defaultValue>
+      <description></description>
+      <id>f25d2f34-fb86-4583-be87-81d657655cc3</id>
+      <masked>false</masked>
+      <name>sharedWith</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Publish - Verify Publish site</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3a7943b4-c4c4-4ff5-8082-a76a6d2b4559</testCaseGuid>
+   <variable>
+      <defaultValue>'CicCloud'</defaultValue>
+      <description></description>
+      <id>b054ca47-d412-4f4a-b9b8-3e8b61a80521</id>
+      <masked>false</masked>
+      <name>siteName</name>
+   </variable>
+</TestCaseEntity>

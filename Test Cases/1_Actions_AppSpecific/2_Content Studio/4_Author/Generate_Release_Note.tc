@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Generate_Release_Note</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3831004c-6caf-4947-aff8-2a5797eea978</testCaseGuid>
+   <variable>
+      <defaultValue>'Catalog'</defaultValue>
+      <description></description>
+      <id>da19ea38-1681-43ff-90af-1cd766b49b09</id>
+      <masked>false</masked>
+      <name>releaseNote</name>
+   </variable>
+</TestCaseEntity>

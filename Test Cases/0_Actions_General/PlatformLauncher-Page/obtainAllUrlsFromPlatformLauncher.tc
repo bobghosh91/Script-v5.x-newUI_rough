@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>obtainAllUrlsFromPlatformLauncher</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ddd3185f-ec11-49da-a301-6791b92d069a</testCaseGuid>
+   <variable>
+      <defaultValue>['prod-aws', 'staging-aws', 'prod-azure', 'dev-aws', 'uat', 'qa', 'canary', 'dev', 'staging-azure']</defaultValue>
+      <description></description>
+      <id>6b3910b8-df3d-4984-a9f4-2d86cdb1a148</id>
+      <masked>false</masked>
+      <name>allEnvironments</name>
+   </variable>
+   <variable>
+      <defaultValue>['Cabinets.Com', '2020 Imperial', '2020 Metric']</defaultValue>
+      <description></description>
+      <id>14078fa4-7e16-483c-9657-7336c9479cf8</id>
+      <masked>false</masked>
+      <name>allCustomers</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>5 -Non Graphic</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>515a602f-3bd6-403f-ac1f-9f913184ccdb</testCaseGuid>
+   <variable>
+      <defaultValue>'false'</defaultValue>
+      <description></description>
+      <id>08f70af8-dfdd-48ab-b278-053e9efb6715</id>
+      <masked>false</masked>
+      <name>useBrowserSessionOfThisTestForNextTest</name>
+   </variable>
+</TestCaseEntity>

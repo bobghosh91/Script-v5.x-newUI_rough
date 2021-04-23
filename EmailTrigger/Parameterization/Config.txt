@@ -1,0 +1,3 @@
+URL="https://2020spaces-my.sharepoint.com/:x:/p/admin_onedrive_02/ET98eQrCmK9HiQ2wkDyqdW8B0ag8tXkz0B8MhunRY-wzhQ?e=MKwxFX&download=1"
+DestinationPathToDump="..\Parameterization\Email Trigger Config.xlsx"
+DeleteProcess=False

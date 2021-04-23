@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Input_ZipCode</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bf873ea1-738f-447c-8c04-a02392c0c596</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>49fd1d32-fc26-4462-afac-a4874d936b50</id>
+      <masked>false</masked>
+      <name>ZipCode</name>
+   </variable>
+</TestCaseEntity>

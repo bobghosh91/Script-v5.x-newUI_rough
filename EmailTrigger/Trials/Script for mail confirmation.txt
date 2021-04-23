@@ -1,0 +1,26 @@
+Sub Mail_small_Text_Outlook()
+    Dim OutApp As Object
+    Dim OutMail As Object
+    Dim strbody As String
+
+    Set OutApp = CreateObject("Outlook.Application")
+    Set OutMail = OutApp.CreateItem(0)
+
+    strbody = "Hi there" & vbNewLine & vbNewLine & _
+              "Automation has triggered on Auto2 - For customer apps"
+
+
+    On Error Resume Next
+    With OutMail
+        .To = "Sayali.dhoot@2020spaces.com;tanmay.kolawale@2020spaces.com;vedprakash.bisen@2020spaces.com; mahesh.patil@2020spaces.com; vahid.khochikar@2020spaces.com"
+        .CC = ""
+        .BCC = ""
+        .subject = "Automation run has triggered - for customer apps"
+        .Body = strbody
+        .Send   
+    End With
+    On Error GoTo 0
+
+    Set OutMail = Nothing
+    Set OutApp = Nothing
+End Sub

@@ -1,0 +1,20 @@
+[Till 23rd June 2020] [Sayali] : 
+
+These files have added functionality to :
+- Clean reports before execution
+- Merge reports after execution
+- Clean earlier and download new one drive file everytime to make functions parametric 
+- Operating code as per provided parameters in above mentioned file
+- Integration with statistics excel file after execution is complete
+- A bit modified formatting of emails being received
+
+[Till 10th Sep 2020] [Tanmay] :  
+
+- QAT environment support
+- Automation Script artifact no. mentioned in emails
+- Once email trigger execution completes, the email is marked as "Read" 
+- Margins (whitespace) added in the html stat table of email
+
+[Till 22nd Oct 2020] [Sayali] :
+- Fixed intermittent error for post execution emails for smaller number of suites
+- Handled condition for unexpected receipient's name (most recent email sender with subject golive) getting printed 

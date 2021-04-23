@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search_Catatog In Table</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>43717564-6c3d-4cf3-b3a0-f5748aa6a6ac</testCaseGuid>
+   <variable>
+      <defaultValue>'Test'</defaultValue>
+      <description></description>
+      <id>baf8912b-31ff-48ce-aec1-6f8eaf515b87</id>
+      <masked>false</masked>
+      <name>catalogSearch</name>
+   </variable>
+</TestCaseEntity>

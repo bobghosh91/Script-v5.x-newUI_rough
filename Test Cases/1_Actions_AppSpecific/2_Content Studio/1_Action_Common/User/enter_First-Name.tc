@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>enter_First-Name</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7dee0e80-7698-4f2e-90ba-fc3f762e670d</testCaseGuid>
+   <variable>
+      <defaultValue>'joe215@dispostable.com'</defaultValue>
+      <description></description>
+      <id>705654aa-d681-44c8-a7bf-65c2c7e21b18</id>
+      <masked>false</masked>
+      <name>FName</name>
+   </variable>
+</TestCaseEntity>

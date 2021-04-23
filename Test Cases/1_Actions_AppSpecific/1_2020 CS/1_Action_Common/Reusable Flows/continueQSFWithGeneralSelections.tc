@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>continueQSFWithGeneralSelections</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e56c6a87-b438-4662-999a-bcaeeaa600ae</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>002c4e4e-83c0-4a7b-9bf4-87cae34f0f2a</id>
+      <masked>false</masked>
+      <name>qsfPageToReach</name>
+   </variable>
+</TestCaseEntity>

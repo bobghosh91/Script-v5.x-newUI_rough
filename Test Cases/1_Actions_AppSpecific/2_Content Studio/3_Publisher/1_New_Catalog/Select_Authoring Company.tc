@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Authoring Company</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>70eb0c2c-9b65-4aec-9a91-64e3f31c5e9c</testCaseGuid>
+   <variable>
+      <defaultValue>'Test2020 New'</defaultValue>
+      <description></description>
+      <id>7a2a5ef0-4ad6-41d9-964e-e0a02f223195</id>
+      <masked>false</masked>
+      <name>authoringCompany</name>
+   </variable>
+</TestCaseEntity>

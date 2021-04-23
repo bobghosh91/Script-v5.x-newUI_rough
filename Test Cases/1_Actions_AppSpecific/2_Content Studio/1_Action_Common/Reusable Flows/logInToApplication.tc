@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>logInToApplication</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>15b4e50c-67d9-40db-a21c-8c2c6bd8c8d9</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e3f31987-5753-4fd1-805c-dd661198a335</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>29fd429d-5383-492a-b3fd-bd89f8908b61</id>
+      <masked>false</masked>
+      <name>userName</name>
+   </variable>
+</TestCaseEntity>

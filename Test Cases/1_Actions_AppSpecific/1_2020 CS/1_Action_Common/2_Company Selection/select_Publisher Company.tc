@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>select_Publisher Company</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2624d99c-9e83-469f-8ba7-e7b1d329ce93</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6362c6af-987c-4264-b4ea-a968317e7132</id>
+      <masked>false</masked>
+      <name>publisherCompany</name>
+   </variable>
+</TestCaseEntity>

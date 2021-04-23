@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>selectEmailAndReturnItsBody</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>234f3a05-2fc3-478e-a105-d28524c2a8d4</testCaseGuid>
+   <variable>
+      <defaultValue>'Trial Message 2'</defaultValue>
+      <description></description>
+      <id>1e8a54ad-da02-42ee-a96d-f8790353ca50</id>
+      <masked>false</masked>
+      <name>emailSubject</name>
+   </variable>
+   <variable>
+      <defaultValue>false</defaultValue>
+      <description></description>
+      <id>2acabf7e-19b1-4560-83a0-f69f99f8e87f</id>
+      <masked>false</masked>
+      <name>partialSubjectMatch</name>
+   </variable>
+</TestCaseEntity>

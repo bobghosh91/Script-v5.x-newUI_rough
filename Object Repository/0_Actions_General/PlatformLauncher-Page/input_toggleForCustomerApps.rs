@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_toggleForCustomerApps</name>
+   <tag></tag>
+   <elementGuidId>12c8cd0a-ac43-4da7-a5d7-269bb44230b0</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//li[@id=&quot;launch-option-customer&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//li[@id=&quot;launch-option-customer&quot;]</value>
+   </webElementProperties>
+</WebElementEntity>

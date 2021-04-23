@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>goToUrl</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0e2727a3-a37c-4bb2-a5a3-d956896fb5c6</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6b112946-d14f-4680-bb07-de233449b5f3</id>
+      <masked>false</masked>
+      <name>specifiedURL</name>
+   </variable>
+   <variable>
+      <defaultValue>true</defaultValue>
+      <description></description>
+      <id>8693da40-1eac-4c08-b625-27377cf829ab</id>
+      <masked>false</masked>
+      <name>skipPrivacyPolicyMessage</name>
+   </variable>
+</TestCaseEntity>

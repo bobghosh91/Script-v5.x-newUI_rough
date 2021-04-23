@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_ModelLibrary by Search</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>30ea0e75-7e86-43ee-9b3c-acaecef8ffbd</testCaseGuid>
+   <variable>
+      <defaultValue>'Test'</defaultValue>
+      <description></description>
+      <id>41c7ecbe-c226-4c5c-a27d-9767eb3eb16f</id>
+      <masked>false</masked>
+      <name>libraryName</name>
+   </variable>
+</TestCaseEntity>

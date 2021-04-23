@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>appendFlagsToBaseUrlAndLaunch</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ba56db82-d3da-4cda-a3cb-9f1b2479e8b5</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>33500891-2b4e-4917-8062-851825cb41b6</id>
+      <masked>false</masked>
+      <name>flagCombination</name>
+   </variable>
+   <variable>
+      <defaultValue>true</defaultValue>
+      <description></description>
+      <id>c6ed0ee9-7209-4743-8a54-9f627bb25d3e</id>
+      <masked>false</masked>
+      <name>relaunchBrowser</name>
+   </variable>
+   <variable>
+      <defaultValue>true</defaultValue>
+      <description></description>
+      <id>960323de-b51e-46e8-ac3c-84b32a6c711e</id>
+      <masked>false</masked>
+      <name>skipPrivacyPolicyMessage</name>
+   </variable>
+</TestCaseEntity>

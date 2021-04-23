@@ -1,0 +1,184 @@
+Sub Mail_PostExecution_Text_Outlook(platformEnvironment As String, path_emailTriggerConfig_Excel As String, machineName As String, projectRootPath As String, isStatsFileGenerated As String, AutomationStatReportFileLocation As String, subject As String)
+    Dim OutApp As Object
+    Dim OutMail As Object
+    Dim strBody As String
+    Dim infoStatsFile As String
+    Dim intResult As Integer
+
+    Debug.Print platformEnv
+    
+    Dim senderEmailID As String
+    senderEmailID = verifyEmailAndOpen(subject)
+    Debug.Print ("senderEmailID is : " & senderEmailID)
+    
+    Set OutApp = CreateObject("Outlook.Application")
+    Set OutMail = OutApp.CreateItem(0)
+    
+    Site = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "scriptCategory", machineName)
+    emailBody = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "emailBodyPostExecutionMail", machineName)
+    reportsAttachmentsFileFolder = projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "reportsAttachmentsFileFolder", machineName)
+    trialEmailToList = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "trialEmailToList", machineName)
+    goLiveEmailToList = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "goLiveEmailToList", machineName)
+    emailCcList = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "emailCcList", machineName)
+    noteForNotSupportedCustomers = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "noteForNotSupportedCustomers", machineName)
+    
+    Debug.Print ("reportsAttachmentsFileFolder is : " & reportsAttachmentsFileFolder)
+    
+   Dim htmlTableOfStats As String
+   Dim listOfColumnsToPrint As Variant
+   
+   
+    If StrComp(isStatsFileGenerated, "GENERATED", vbTextCompare) = 0 Then
+        infoStatsFile = "Please see result statistics below : "
+        AutomationStatReportFileLocation = projectRootPath & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "AutomationStatReportFileLocation", machineName)
+        Debug.Print ("AutomationStatReportFileLocation-->" & AutomationStatReportFileLocation)
+        'listOfColumnsToPrint = Array("FileName", "NOTEXECUTED", "Passed", "Failed", "FAILED - Img vs NonImg")
+        listOfColumnsToPrint = Array("REPORT NAME", "PASSED", "VERIFY", "FAILED", "NOT EXECUTED")
+        Timeout 10
+        htmlTableOfStats = fetchExcelDataMatrix(AutomationStatReportFileLocation, listOfColumnsToPrint)
+        
+        
+            strBody = emailBody & _
+             "<br>" & _
+             "<br>" & _
+             "<html>" & "<table>" & _
+             "<tr>" & "<td><b>" & "Machine" & "</b></td>" & "<td>" & ": " & machineName & _
+             "<tr>" & "<td><b>" & "Site" & "</b></td>" & "<td>" & ": " & Site & "</tr>" & _
+             "<tr>" & "<td><b>" & "Environment" & "</b></td>" & "<td>" & ": " & UCase(platformEnvironment) & "</tr>" & _
+             "<tr>" & "<td><b>" & "Triggered by" & "</b></td>" & "<td>" & ": " & senderEmailID & "</tr>" & _
+             "<tr>" & "<td><b>" & "Artifact" & "</b></td>" & "<td>" & ": " & fetchVerifiedBuildVersionFromTextFile(fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectVerifiedVersionFilePath", machineName)) & "</tr>" & _
+             "<tr>" & "<td><b>" & "Browser" & "</b></td>" & "<td>" & ": " & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "browserName", machineName) & "</tr>" & _
+             "</table>" & "</html>" & _
+             "<br />" & _
+             infoStatsFile & "<br /><br />" & _
+             htmlTableOfStats & "<br />" & _
+             noteForNotSupportedCustomers & "<br />" & "<br />" & _
+             "Thanks," & vbNewLine & _
+             "<br />" & _
+             "Web Automation team"
+
+     ElseIf StrComp(isStatsFileGenerated, "NOT_GENERATED", vbTextCompare) = 0 Then
+        infoStatsFile = "Execution result statistics are unavailable. It seems error has occurred while fetching those, unless it is DS suite. For DS run statistics are not applicable."
+        noteForNotSupportedCustomers = ""
+        htmlTableOfStats = ""
+        
+            strBody = emailBody & _
+             "<br>" & _
+             "<br>" & _
+             "<html>" & "<table>" & _
+             "<tr>" & "<td><b>" & "Machine" & "</b></td>" & "<td>" & ": " & machineName & _
+             "<tr>" & "<td><b>" & "Site" & "</b></td>" & "<td>" & ": " & Site & "</tr>" & _
+             "<tr>" & "<td><b>" & "Environment" & "</b></td>" & "<td>" & ": " & UCase(platformEnvironment) & "</tr>" & _
+             "<tr>" & "<td><b>" & "Triggered by" & "</b></td>" & "<td>" & ": " & senderEmailID & "</tr>" & _
+             "<tr>" & "<td><b>" & "Artifact" & "</b></td>" & "<td>" & ": " & fetchVerifiedBuildVersionFromTextFile(fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectVerifiedVersionFilePath", machineName)) & "</tr>" & _
+             "<tr>" & "<td><b>" & "Browser" & "</b></td>" & "<td>" & ": " & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "browserName", machineName) & "</tr>" & _
+             "</table>" & "</html>" & _
+             "<br />" & _
+             "<span style = 'color:red;'>" & infoStatsFile & "</span><br /><br />" & _
+             "Thanks," & vbNewLine & _
+             "<br />" & _
+             "Web Automation team"
+             
+     ElseIf StrComp(isStatsFileGenerated, "NOT_REQUIRED", vbTextCompare) = 0 Then
+            strBody = emailBody & _
+             "<br>" & _
+             "<br>" & _
+             "<html>" & "<table>" & _
+             "<tr>" & "<td><b>" & "Machine" & "</b></td>" & "<td>" & ": " & machineName & _
+             "<tr>" & "<td><b>" & "Site" & "</b></td>" & "<td>" & ": " & Site & "</tr>" & _
+             "<tr>" & "<td><b>" & "Environment" & "</b></td>" & "<td>" & ": " & UCase(platformEnvironment) & "</tr>" & _
+             "<tr>" & "<td><b>" & "Triggered by" & "</b></td>" & "<td>" & ": " & senderEmailID & "</tr>" & _
+             "<tr>" & "<td><b>" & "Artifact" & "</b></td>" & "<td>" & ": " & fetchVerifiedBuildVersionFromTextFile(fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "projectVerifiedVersionFilePath", machineName)) & "</tr>" & _
+             "<tr>" & "<td><b>" & "Browser" & "</b></td>" & "<td>" & ": " & fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "browserName", machineName) & "</tr>" & _
+             "</table>" & "</html>" & _
+             "<br />" & _
+             "Thanks," & vbNewLine & _
+             "<br />" & _
+             "Web Automation team"
+
+    End If
+    
+    Debug.Print ("htmlTableOfStats-->" & htmlTableOfStats)
+    
+On Error Resume Next
+With OutMail
+        
+    If InStr(Trim(senderEmailID), "Sayali.Dhoot@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "Vahid.Khochikar@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "qaguiautomationtest1@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "Tanmay.Kolawale@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "VedPrakash.Bisen@2020spaces.com") = 1 Or InStr(Trim(senderEmailID), "Mahesh.Patil@2020spaces.com") = 1 Then
+        result = 1
+        Debug.Print result
+        .To = trialEmailToList
+        .CC = emailCcList
+        .BCC = ""
+        .subject = "Trial Run completed: " & Site & ":" & UCase(platformEnvironment)
+    Else
+        result = 0
+        Debug.Print result
+        .To = goLiveEmailToList
+        .CC = emailCcList
+        .BCC = ""
+        .subject = "Go live run completed : " & Site & ": " & UCase(platformEnvironment)
+    End If
+    
+'    .Body = strBody
+.HTMLBody = strBody
+
+reportsNeedTobeAttached = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "reportsNeedTobeAttached", machineName)
+onlyAttachCombinedReport = fetchParamValueFromExcel(path_emailTriggerConfig_Excel, "onlyAttachCombinedReport", machineName)
+
+resultAttach = InStr(1, LCase(reportsNeedTobeAttached), "yes") > 0
+Debug.Print "resultAttach...>" & resultAttach
+
+Dim attachmentFile As Variant
+     
+If InStr(1, LCase(reportsNeedTobeAttached), "yes") > 0 Then
+
+    If InStr(1, LCase(onlyAttachCombinedReport), "yes") > 0 Then
+        attachmentFile = Dir(reportsAttachmentsFileFolder & "*combined*.xlsx")
+    Else
+        attachmentFile = Dir(reportsAttachmentsFileFolder & "*.xlsx")
+    End If
+    
+    Debug.Print "attachmentFile-->" & attachmentFile
+    While (attachmentFile <> "")
+        .Attachments.Add reportsAttachmentsFileFolder & attachmentFile
+        numberOfFiles = numberOfFiles + 1
+        attachmentFile = Dir
+    Wend
+'    MsgBox numberOfFiles
+
+    If (numberOfFiles = 0) Then
+    attachmentFile = Dir(reportsAttachmentsFileFolder & "*.xlsx")
+        While (attachmentFile <> "")
+            .Attachments.Add reportsAttachmentsFileFolder & attachmentFile
+            numberOfFiles = numberOfFiles + 1
+            attachmentFile = Dir
+        Wend
+    End If
+
+Else
+    Debug.Print "Reports need not to be attached"
+End If
+
+    .Send   'or use .Display
+    
+    End With
+    On Error GoTo 0
+
+    Set OutMail = Nothing
+    Set OutApp = Nothing
+End Sub
+
+Public Sub CountFilesInFolder(strDir As String, Optional strType As String)
+    
+    Dim file As Variant, i As Integer
+    If Right(strDir, 1) <> "\" Then strDir = strDir & "\"
+    file = Dir(strDir & strType)
+    While (file <> "")
+        i = i + 1
+        file = Dir
+    Wend
+    MsgBox i
+End Sub
+
+
+

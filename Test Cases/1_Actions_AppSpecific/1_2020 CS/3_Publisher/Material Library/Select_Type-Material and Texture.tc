@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Type-Material and Texture</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d8173ac5-9aa1-4449-bdf5-2ddab4cf470e</testCaseGuid>
+   <variable>
+      <defaultValue>'Materials &amp; Textures'</defaultValue>
+      <description></description>
+      <id>80390d3f-fa8c-462c-ba1e-52a912a41402</id>
+      <masked>false</masked>
+      <name>Type</name>
+   </variable>
+</TestCaseEntity>

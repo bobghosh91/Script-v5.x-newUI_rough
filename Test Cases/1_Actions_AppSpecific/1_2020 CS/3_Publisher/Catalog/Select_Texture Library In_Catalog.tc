@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Select_Texture Library In_Catalog</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ff2e6e86-3705-43e4-b2c3-cc642cdaa97d</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>755f218c-6226-4e88-9e6c-da105fdc29d3</id>
+      <masked>false</masked>
+      <name>libraryName</name>
+   </variable>
+</TestCaseEntity>
